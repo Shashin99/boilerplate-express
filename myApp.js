@@ -1,5 +1,6 @@
 let express = require('express');
 let app = express();
+let bodyParser = require("body-parser");
 
 // #1
 console.log("Hello World");
@@ -11,6 +12,9 @@ app.get("/", (req,res) =>{
 
 // #4
 app.use("/public", express.static( __dirname + "/public"))
+
+// #11
+app.use(bodyParser.urlencoded({extended: false}));
 
 // #7
 app.use((req,res,next) => {
