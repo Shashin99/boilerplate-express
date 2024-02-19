@@ -9,6 +9,9 @@ app.get("/", (req,res) =>{
     res.send("Hello Express");
 })
 
+// #4
+app.use("/public", express.static( __dirname + "/public"))
+
 // #3
 app.get ("/", (req,res) => {
     res.sendFile( __dirname + "/views/index.html")
